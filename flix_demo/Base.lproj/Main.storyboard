@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,42 +14,64 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="NowPlayingViewController" customModule="flix_demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1yB-0Q-1Ky"/>
+                        <viewControllerLayoutGuide type="bottom" id="uVH-v9-srH"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dcK-tF-xYN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dcK-tF-xYN">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="178" id="Alp-HT-HsQ" customClass="MovieCell" customModule="flix_demo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="178" id="Alp-HT-HsQ" customClass="MovieCell" customModule="flix_demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="178"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Alp-HT-HsQ" id="cvF-ot-LYp">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="177.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="Cjl-wj-El4">
-                                                    <rect key="frame" x="15" y="10" width="98" height="156"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cjl-wj-El4">
+                                                    <rect key="frame" x="14" y="11" width="112" height="149"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="112" id="oOw-Td-5lI"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Thor: Ragnarok" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" id="Sms-lj-qbd">
-                                                    <rect key="frame" x="135" y="10" width="225" height="23"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e31-HG-FFF">
-                                                    <rect key="frame" x="135" y="41" width="225" height="117"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e31-HG-FFF">
+                                                    <rect key="frame" x="134" y="38" width="226" height="127"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="127" id="dQR-ND-RSk"/>
+                                                    </constraints>
                                                     <string key="text">Thor is imprisoned on the other side of the universe and finds himself in a race against time to get back to Asgard to stop Ragnarok, the prophecy of destruction to his homeworld and the end of Asgardian civilization, at the hands of an all-powerful new threat, the ruthless Hela.</string>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thor: Ragnarok" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sms-lj-qbd">
+                                                    <rect key="frame" x="134" y="5" width="233" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="31" id="r1D-xU-3kM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="e31-HG-FFF" firstAttribute="top" secondItem="Sms-lj-qbd" secondAttribute="bottom" constant="2" id="3eu-MG-IHf"/>
+                                                <constraint firstItem="Cjl-wj-El4" firstAttribute="top" secondItem="cvF-ot-LYp" secondAttribute="topMargin" id="8bh-Mm-ZWY"/>
+                                                <constraint firstItem="Sms-lj-qbd" firstAttribute="top" secondItem="cvF-ot-LYp" secondAttribute="topMargin" constant="-6" id="CBG-sc-K37"/>
+                                                <constraint firstItem="e31-HG-FFF" firstAttribute="leading" secondItem="Sms-lj-qbd" secondAttribute="leading" id="GWj-DC-JX1"/>
+                                                <constraint firstItem="Cjl-wj-El4" firstAttribute="leading" secondItem="cvF-ot-LYp" secondAttribute="leadingMargin" constant="-1" id="KoD-7p-w5D"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Sms-lj-qbd" secondAttribute="trailing" constant="-7" id="OGm-yv-or8"/>
+                                                <constraint firstAttribute="trailing" secondItem="e31-HG-FFF" secondAttribute="trailing" constant="15" id="Srm-6c-4GR"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Cjl-wj-El4" secondAttribute="bottom" constant="7" id="Y5e-CX-YVi"/>
+                                                <constraint firstItem="e31-HG-FFF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cjl-wj-El4" secondAttribute="trailing" constant="8" symbolic="YES" id="bMP-BE-9Uv"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="e31-HG-FFF" secondAttribute="bottom" constant="2" id="ff9-v7-V4g"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="overviewLabel" destination="e31-HG-FFF" id="hfx-Fo-5bC"/>

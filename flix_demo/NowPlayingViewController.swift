@@ -56,10 +56,14 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         cell.overviewLabel.text = overview;
         //        print(cell.overviewLabel.text!);
         
-        let posterPathString = movie["poster_path"] as! String;
-        let posterBaseUrl = "https://image.tmdb.org/t/p/w500";
-        let posterUrl = URL(string: posterBaseUrl + posterPathString)!;
-        cell.posterImageView.af_setImage(withURL: posterUrl);
+        if let posterPathString = movie["poster_path"] as? String {
+            let posterBaseUrl = "https://image.tmdb.org/t/p/w500";
+            let posterUrl = URL(string: posterBaseUrl + posterPathString)!;
+            cell.posterImageView.af_setImage(withURL: posterUrl);
+        }
+        else {
+            cell.posterImageView.image = nil;
+        }
         
         return cell;
     }
