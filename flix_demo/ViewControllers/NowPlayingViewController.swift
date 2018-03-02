@@ -80,7 +80,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         else {
             cell.posterImageView.image = nil;
         }
-        
+        cell.selectionStyle = .none
         activityIndicator.stopAnimating()
         return cell;
     }

@@ -17,6 +17,13 @@ class MovieCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        titleLabel.preferredMaxLayoutWidth = titleLabel.frame.size.width
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        titleLabel.preferredMaxLayoutWidth = titleLabel.frame.size.width
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
